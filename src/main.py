@@ -60,13 +60,13 @@ async def lifespan(app: FastAPI):
                     value TEXT
                 )
             """)
-            # Sprawdzamy, czy już była inicjalizacja
+            # Teraz sprawdzamy, czy baza była inicjalizowana
             row = await conn.fetchrow("SELECT value FROM app_meta WHERE key='initialized'")
             initialized = row['value'] if row else None
-
+    
         if not initialized:
             logger.info("Running DB initialization script...")
-            from init_db import run_init  # import tutaj, żeby uniknąć błędów przy braku modułu
+            from init_db import run_init
             async with db.get_connection() as conn:
                 await run_init(conn)
                 await conn.execute(
