@@ -1,13 +1,16 @@
 import asyncpg
 from contextlib import asynccontextmanager
-from typing import Optional, AsyncGenerator, Any
+from typing import Optional, AsyncGenerator, Any, List
 from src.config import settings
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Database:
     def __init__(self):
         self.pool: Optional[asyncpg.Pool] = None
-    
+
     async def connect(self):
         """Create connection pool"""
         self.pool = await asyncpg.create_pool(
@@ -17,12 +20,12 @@ class Database:
             command_timeout=60,
             init=self._init_connection
         )
-    
+
     async def disconnect(self):
         """Close connection pool"""
         if self.pool:
             await self.pool.close()
-    
+
     @staticmethod
     async def _init_connection(conn):
         """Initialize connection with JSON support"""
@@ -32,7 +35,7 @@ class Database:
             decoder=json.loads,
             schema='pg_catalog'
         )
-    
+
     @asynccontextmanager
     async def get_connection(self) -> AsyncGenerator[Any, None]:
         """Get connection from pool"""
@@ -41,5 +44,19 @@ class Database:
         assert self.pool is not None
         async with self.pool.acquire() as connection:
             yield connection
+
+    # --- Dodatkowe metody dla init_db.py ---
+    async def execute(self, query: str, *args):
+        async with self.get_connection() as conn:
+            return await conn.execute(query, *args)
+
+    async def fetch_one(self, query: str, *args) -> Optional[asyncpg.Record]:
+        async with self.get_connection() as conn:
+            return await conn.fetchrow(query, *args)
+
+    async def fetch_all(self, query: str, *args) -> List[asyncpg.Record]:
+        async with self.get_connection() as conn:
+            return await conn.fetch(query, *args)
+
 
 db = Database()
