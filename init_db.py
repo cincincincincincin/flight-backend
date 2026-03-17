@@ -19,19 +19,16 @@ async def run_init(_app=None):
     Pełna inicjalizacja bazy danych zgodnie z init.sql:
     - usunięcie starych tabel (DROP TABLE ... CASCADE)
     - tworzenie tabel BEZ kluczy obcych
-    - wczytanie danych z JSON
+    - wczytanie danych z JSON (bez json.dumps!)
     - czyszczenie niepotrzebnych rekordów
     - dodanie kluczy obcych, indeksów, widoków i funkcji
     - ustawienie flagi initialized
     """
 
-    # Pobieramy jedno połączenie na cały proces inicjalizacji
     async with db.get_connection() as conn:
-        # Lock PostgreSQL w tym połączeniu
         await conn.execute("SELECT pg_advisory_lock(123456)")
 
         try:
-            # Sprawdź czy baza już jest zainicjalizowana
             row = await conn.fetchrow("SELECT value FROM app_meta WHERE key='initialized'")
             if row:
                 logger.info("Baza danych już zainicjalizowana, pomijam init")
@@ -41,9 +38,8 @@ async def run_init(_app=None):
             logger.info("Rozpoczynam inicjalizację bazy danych")
 
             # ============================================
-            # 0. USUNIĘCIE ISTNIEJĄCYCH TABEL (jeśli istnieją)
+            # 0. USUNIĘCIE ISTNIEJĄCYCH TABEL
             # ============================================
-            # Kolejność usuwania: najpierw te z zależnościami, potem główne
             await conn.execute("DROP TABLE IF EXISTS trip_flight_prices CASCADE;")
             await conn.execute("DROP TABLE IF EXISTS trip_flights CASCADE;")
             await conn.execute("DROP TABLE IF EXISTS trips CASCADE;")
@@ -63,7 +59,7 @@ async def run_init(_app=None):
             # ============================================
             # 1. Tworzenie tabel (bez kluczy obcych)
             # ============================================
-
+            # ... (kod tworzenia tabel bez zmian, taki sam jak poprzednio)
             # Tabela metadanych
             await conn.execute("""
             CREATE TABLE app_meta (
@@ -228,7 +224,7 @@ async def run_init(_app=None):
             );
             """)
 
-            # Podróże użytkowników (nowa tabela)
+            # Podróże użytkowników
             await conn.execute("""
             CREATE TABLE user_trips (
                 id SERIAL PRIMARY KEY,
@@ -279,16 +275,15 @@ async def run_init(_app=None):
             """)
 
             # ============================================
-            # 2. Wczytywanie danych z JSON
+            # 2. Wczytywanie danych z JSON (poprawione!)
             # ============================================
-
             data_files = [
                 ("countries.json", "countries", ["code", "name", "name_translations", "currency", "cases"]),
-                ("cities.json", "cities", ["code","name", "name_translations", "country_code", "time_zone", "coordinates", "has_flightable_airport", "cases"]),
-                ("airlines.json", "airlines", ["code","name", "name_translations", "is_lowcost"]),
-                ("airports.json", "airports", ["code","name", "name_translations","city_code","country_code","time_zone","coordinates","flightable","iata_type"]),
-                ("planes.json", "planes", ["code","name"]),
-                ("routes.json", "routes", ["airline_iata","airline_icao","departure_airport_iata","departure_airport_icao","arrival_airport_iata","arrival_airport_icao","codeshare","transfers","planes"]),
+                ("cities.json", "cities", ["code", "name", "name_translations", "country_code", "time_zone", "coordinates", "has_flightable_airport", "cases"]),
+                ("airlines.json", "airlines", ["code", "name", "name_translations", "is_lowcost"]),
+                ("airports.json", "airports", ["code", "name", "name_translations", "city_code", "country_code", "time_zone", "coordinates", "flightable", "iata_type"]),
+                ("planes.json", "planes", ["code", "name"]),
+                ("routes.json", "routes", ["airline_iata", "airline_icao", "departure_airport_iata", "departure_airport_icao", "arrival_airport_iata", "arrival_airport_icao", "codeshare", "transfers", "planes"]),
             ]
 
             for file_name, table, columns in data_files:
@@ -297,15 +292,17 @@ async def run_init(_app=None):
                     # Domyślne wartości dla brakujących pól
                     for col in columns:
                         if col not in item or item[col] in [None, ""]:
-                            if col in ["has_flightable_airport","flightable","codeshare","is_lowcost"]:
+                            if col in ["has_flightable_airport", "flightable", "codeshare", "is_lowcost"]:
                                 item[col] = False
                             elif col in ["transfers"]:
                                 item[col] = 0
                             else:
                                 item[col] = None
 
-                    # JSONB dla słowników
-                    values = [json.dumps(item[col]) if isinstance(item.get(col), dict) else item.get(col) for col in columns]
+                    # !!! ZMIANA: NIE używamy json.dumps na słownikach !!!
+                    # values = [json.dumps(item[col]) if isinstance(item.get(col), dict) else item.get(col) for col in columns]
+                    values = [item.get(col) for col in columns]
+
                     placeholders = ",".join(f"${i+1}" for i in range(len(columns)))
                     await conn.execute(
                         f"INSERT INTO {table} ({','.join(columns)}) VALUES ({placeholders}) ON CONFLICT DO NOTHING",
@@ -315,33 +312,24 @@ async def run_init(_app=None):
             # ============================================
             # 3. Czyszczenie danych (DELETE)
             # ============================================
-
-            # 3.1 Usuń lotniska z flightable = false oraz iata_type != 'airport' (jeśli nie jest NULL)
+            # (dokładnie tak jak w init.sql)
             await conn.execute("""
                 DELETE FROM airports
                 WHERE flightable = false OR (iata_type IS NOT NULL AND iata_type != 'airport');
             """)
-
-            # 3.2 Usuń miasta z has_flightable_airport = false
             await conn.execute("""
                 DELETE FROM cities WHERE has_flightable_airport = false;
             """)
-
-            # 3.3 Usuń miasta z nieistniejącymi krajami
             await conn.execute("""
                 DELETE FROM cities
                 WHERE country_code IS NOT NULL
                   AND country_code NOT IN (SELECT code FROM countries);
             """)
-
-            # 3.4 Usuń lotniska z nieistniejącymi miastami lub krajami
             await conn.execute("""
                 DELETE FROM airports
                 WHERE (city_code IS NOT NULL AND city_code NOT IN (SELECT code FROM cities))
                    OR (country_code IS NOT NULL AND country_code NOT IN (SELECT code FROM countries));
             """)
-
-            # 3.5 Usuń trasy z nieistniejącymi referencjami
             await conn.execute("""
                 DELETE FROM routes
                 WHERE (airline_iata IS NOT NULL AND airline_iata NOT IN (SELECT code FROM airlines))
@@ -937,10 +925,10 @@ async def run_init(_app=None):
             $$ LANGUAGE plpgsql;
             """)
 
+
             # ============================================
             # 8. Statystyki (logowanie)
             # ============================================
-
             countries_count = await conn.fetchval("SELECT COUNT(*) FROM countries")
             cities_count = await conn.fetchval("SELECT COUNT(*) FROM cities")
             airports_count = await conn.fetchval("SELECT COUNT(*) FROM airports")
@@ -958,13 +946,10 @@ async def run_init(_app=None):
             logger.info(f"Trasy: {routes_count}")
             logger.info(f"Samoloty: {planes_count}")
             logger.info("============================================")
-            logger.info("NOWE TABELE API: airport_schedules_cache, flights, flight_prices_cache, flight_offers, user_trips, trips, trip_flights, trip_flight_prices")
-            logger.info("============================================")
 
             # ============================================
             # 9. Flaga initialized
             # ============================================
-
             await conn.execute("""
                 INSERT INTO app_meta (key, value) VALUES ('initialized', 'true')
                 ON CONFLICT (key) DO NOTHING;
@@ -973,7 +958,6 @@ async def run_init(_app=None):
             logger.info("Inicjalizacja bazy zakończona")
 
         finally:
-            # Zwolnij lock
             await conn.execute("SELECT pg_advisory_unlock(123456)")
 
 
