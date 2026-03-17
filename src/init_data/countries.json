@@ -1,0 +1,2834 @@
+[
+  {
+    "name_translations": {
+      "en": "Morocco"
+    },
+    "cases": {
+      "su": "Morocco"
+    },
+    "code": "MA",
+    "name": "Morocco",
+    "currency": "MAD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Morocco"
+  },
+  {
+    "name_translations": {
+      "en": "Belgium"
+    },
+    "cases": {
+      "su": "Belgium"
+    },
+    "code": "BE",
+    "name": "Belgium",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Belgium"
+  },
+  {
+    "name_translations": {
+      "en": "Saudi Arabia"
+    },
+    "cases": {
+      "su": "Saudi Arabia"
+    },
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "currency": "SAR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+  },
+  {
+    "name_translations": {
+      "en": "Uzbekistan"
+    },
+    "cases": {
+      "su": "Uzbekistan"
+    },
+    "code": "UZ",
+    "name": "Uzbekistan",
+    "currency": "UZS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Uzbekistan"
+  },
+  {
+    "name_translations": {
+      "en": "Liberia"
+    },
+    "cases": {
+      "su": "Liberia"
+    },
+    "code": "LR",
+    "name": "Liberia",
+    "currency": "LRD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Liberia"
+  },
+  {
+    "name_translations": {
+      "en": "Dominica"
+    },
+    "cases": {
+      "su": "Dominica"
+    },
+    "code": "DM",
+    "name": "Dominica",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Dominica"
+  },
+  {
+    "name_translations": {
+      "en": "Svalbard and Jan Mayen"
+    },
+    "cases": {
+      "su": "Svalbard and Jan Mayen"
+    },
+    "code": "SJ",
+    "name": "Svalbard and Jan Mayen",
+    "currency": "NOK",
+    "wikipedia_link": ""
+  },
+  {
+    "name_translations": {
+      "en": "Myanmar"
+    },
+    "cases": {
+      "su": "Myanmar"
+    },
+    "code": "MM",
+    "name": "Myanmar",
+    "currency": "MMK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Burma"
+  },
+  {
+    "name_translations": {
+      "en": "Lesotho"
+    },
+    "cases": {
+      "su": "Lesotho"
+    },
+    "code": "LS",
+    "name": "Lesotho",
+    "currency": "LSL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Lesotho"
+  },
+  {
+    "name_translations": {
+      "en": "Honduras"
+    },
+    "cases": {
+      "su": "Honduras"
+    },
+    "code": "HN",
+    "name": "Honduras",
+    "currency": "HNL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Honduras"
+  },
+  {
+    "name_translations": {
+      "en": "Hong Kong"
+    },
+    "cases": {
+      "su": "Hong Kong"
+    },
+    "code": "HK",
+    "name": "Hong Kong",
+    "currency": "HKD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Hong_Kong"
+  },
+  {
+    "name_translations": {
+      "en": "Moldova"
+    },
+    "cases": {
+      "su": "Moldova"
+    },
+    "code": "MD",
+    "name": "Moldova",
+    "currency": "MDL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Moldova"
+  },
+  {
+    "name_translations": {
+      "en": "United Kingdom"
+    },
+    "cases": {
+      "su": "United Kingdom"
+    },
+    "code": "GB",
+    "name": "United Kingdom",
+    "currency": "GBP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/United_Kingdom"
+  },
+  {
+    "name_translations": {
+      "en": "Pakistan"
+    },
+    "cases": {
+      "su": "Pakistan"
+    },
+    "code": "PK",
+    "name": "Pakistan",
+    "currency": "PKR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Pakistan"
+  },
+  {
+    "name_translations": {
+      "en": "Tuvalu"
+    },
+    "cases": {
+      "su": "Tuvalu"
+    },
+    "code": "TV",
+    "name": "Tuvalu",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Tuvalu"
+  },
+  {
+    "name_translations": {
+      "en": "Mexico"
+    },
+    "cases": {
+      "su": "Mexico"
+    },
+    "code": "MX",
+    "name": "Mexico",
+    "currency": "MXN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mexico"
+  },
+  {
+    "name_translations": {
+      "en": "Angola"
+    },
+    "cases": {
+      "su": "Angola"
+    },
+    "code": "AO",
+    "name": "Angola",
+    "currency": "AOA",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Angola"
+  },
+  {
+    "name_translations": {
+      "en": "South Sudan"
+    },
+    "cases": {
+      "su": "South Sudan"
+    },
+    "code": "SS",
+    "name": "South Sudan",
+    "currency": "",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/South_Sudan"
+  },
+  {
+    "name_translations": {
+      "en": "Malta"
+    },
+    "cases": {
+      "su": "Malta"
+    },
+    "code": "MT",
+    "name": "Malta",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Malta"
+  },
+  {
+    "name_translations": {
+      "en": "Algeria"
+    },
+    "cases": {
+      "su": "Algeria"
+    },
+    "code": "DZ",
+    "name": "Algeria",
+    "currency": "DZD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Algeria"
+  },
+  {
+    "name_translations": {
+      "en": "French Guiana"
+    },
+    "cases": {
+      "su": "French Guiana"
+    },
+    "code": "GF",
+    "name": "French Guiana",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/French_Guiana"
+  },
+  {
+    "name_translations": {
+      "en": "Faroe Islands"
+    },
+    "cases": {
+      "su": "Faroe Islands"
+    },
+    "code": "FO",
+    "name": "Faroe Islands",
+    "currency": "DKK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Faroe_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Mozambique"
+    },
+    "cases": {
+      "su": "Mozambique"
+    },
+    "code": "MZ",
+    "name": "Mozambique",
+    "currency": "MZN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mozambique"
+  },
+  {
+    "name_translations": {
+      "en": "Sweden"
+    },
+    "cases": {
+      "su": "Sweden"
+    },
+    "code": "SE",
+    "name": "Sweden",
+    "currency": "SEK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sweden"
+  },
+  {
+    "name_translations": {
+      "en": "British Virgin Islands"
+    },
+    "cases": {
+      "su": "British Virgin Islands"
+    },
+    "code": "VG",
+    "name": "British Virgin Islands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/British_Virgin_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Montenegro"
+    },
+    "cases": {
+      "su": "Montenegro"
+    },
+    "code": "ME",
+    "name": "Montenegro",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Montenegro"
+  },
+  {
+    "name_translations": {
+      "en": "Cayman Islands"
+    },
+    "cases": {
+      "su": "Cayman Islands"
+    },
+    "code": "KY",
+    "name": "Cayman Islands",
+    "currency": "KYD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cayman_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Laos"
+    },
+    "cases": {
+      "su": "Laos"
+    },
+    "code": "LA",
+    "name": "Laos",
+    "currency": "LAK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Laos"
+  },
+  {
+    "name_translations": {
+      "en": "Rwanda"
+    },
+    "cases": {
+      "su": "Rwanda"
+    },
+    "code": "RW",
+    "name": "Rwanda",
+    "currency": "RWF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Rwanda"
+  },
+  {
+    "name_translations": {
+      "en": "French Polynesia"
+    },
+    "cases": {
+      "su": "French Polynesia"
+    },
+    "code": "PF",
+    "name": "French Polynesia",
+    "currency": "XPF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/French_Polynesia"
+  },
+  {
+    "name_translations": {
+      "en": "Bosnia and Herzegovina"
+    },
+    "cases": {
+      "su": "Bosnia and Herzegovina"
+    },
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "currency": "BAM",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina"
+  },
+  {
+    "name_translations": {
+      "en": "Cuba"
+    },
+    "cases": {
+      "su": "Cuba"
+    },
+    "code": "CU",
+    "name": "Cuba",
+    "currency": "CUP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cuba"
+  },
+  {
+    "name_translations": {
+      "en": "Malaysia"
+    },
+    "cases": {
+      "su": "Malaysia"
+    },
+    "code": "MY",
+    "name": "Malaysia",
+    "currency": "MYR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Malaysia"
+  },
+  {
+    "name_translations": {
+      "en": "East Timor"
+    },
+    "cases": {
+      "su": "East Timor"
+    },
+    "code": "TL",
+    "name": "East Timor",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Timor-Leste"
+  },
+  {
+    "name_translations": {
+      "en": "Tanzania"
+    },
+    "cases": {
+      "su": "Tanzania"
+    },
+    "code": "TZ",
+    "name": "Tanzania",
+    "currency": "TZS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Tanzania"
+  },
+  {
+    "name_translations": {
+      "en": "Ivory Coast"
+    },
+    "cases": {
+      "su": "Ivory Coast"
+    },
+    "code": "CI",
+    "name": "Ivory Coast",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Côte_d'Ivoire"
+  },
+  {
+    "name_translations": {
+      "en": "Slovakia"
+    },
+    "cases": {
+      "su": "Slovakia"
+    },
+    "code": "SK",
+    "name": "Slovakia",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Slovakia"
+  },
+  {
+    "name_translations": {
+      "en": "Uganda"
+    },
+    "cases": {
+      "su": "Uganda"
+    },
+    "code": "UG",
+    "name": "Uganda",
+    "currency": "UGX",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Uganda"
+  },
+  {
+    "name_translations": {
+      "en": "El Salvador"
+    },
+    "cases": {
+      "su": "El Salvador"
+    },
+    "code": "SV",
+    "name": "El Salvador",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/El_Salvador"
+  },
+  {
+    "name_translations": {
+      "en": "Curaçao"
+    },
+    "cases": {
+      "su": "Curaçao"
+    },
+    "code": "CW",
+    "name": "Curaçao",
+    "currency": "ANG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cura%C3%A7ao"
+  },
+  {
+    "name_translations": {
+      "en": "Grenada"
+    },
+    "cases": {
+      "su": "Grenada"
+    },
+    "code": "GD",
+    "name": "Grenada",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Grenada"
+  },
+  {
+    "name_translations": {
+      "en": "Papua New Guinea"
+    },
+    "cases": {
+      "su": "Papua New Guinea"
+    },
+    "code": "PG",
+    "name": "Papua New Guinea",
+    "currency": "PGK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Papua_New_Guinea"
+  },
+  {
+    "name_translations": {
+      "en": "Brunei"
+    },
+    "cases": {
+      "su": "Brunei"
+    },
+    "code": "BN",
+    "name": "Brunei",
+    "currency": "BND",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Brunei"
+  },
+  {
+    "name_translations": {
+      "en": "Iran"
+    },
+    "cases": {
+      "su": "Iran"
+    },
+    "code": "IR",
+    "name": "Iran",
+    "currency": "IRR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Iran"
+  },
+  {
+    "name_translations": {
+      "en": "Ireland"
+    },
+    "cases": {
+      "su": "Ireland"
+    },
+    "code": "IE",
+    "name": "Ireland",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ireland"
+  },
+  {
+    "name_translations": {
+      "en": "Sri Lanka"
+    },
+    "cases": {
+      "su": "Sri Lanka"
+    },
+    "code": "LK",
+    "name": "Sri Lanka",
+    "currency": "LKR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sri_Lanka"
+  },
+  {
+    "name_translations": {
+      "en": "Micronesia"
+    },
+    "cases": {
+      "su": "Micronesia"
+    },
+    "code": "FM",
+    "name": "Micronesia",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Federated_States_of_Micronesia"
+  },
+  {
+    "name_translations": {
+      "en": "Iceland"
+    },
+    "cases": {
+      "su": "Iceland"
+    },
+    "code": "IS",
+    "name": "Iceland",
+    "currency": "ISK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Iceland"
+  },
+  {
+    "name_translations": {
+      "en": "Mauritius"
+    },
+    "cases": {
+      "su": "Mauritius"
+    },
+    "code": "MU",
+    "name": "Mauritius",
+    "currency": "MUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mauritius"
+  },
+  {
+    "name_translations": {
+      "en": "Brazil"
+    },
+    "cases": {
+      "su": "Brazil"
+    },
+    "code": "BR",
+    "name": "Brazil",
+    "currency": "BRL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Brazil"
+  },
+  {
+    "name_translations": {
+      "en": "Eritrea"
+    },
+    "cases": {
+      "su": "Eritrea"
+    },
+    "code": "ER",
+    "name": "Eritrea",
+    "currency": "ERN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Eritrea"
+  },
+  {
+    "name_translations": {
+      "en": "Kazakhstan"
+    },
+    "cases": {
+      "su": "Kazakhstan"
+    },
+    "code": "KZ",
+    "name": "Kazakhstan",
+    "currency": "KZT",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kazakhstan"
+  },
+  {
+    "name_translations": {
+      "en": "Argentina"
+    },
+    "cases": {
+      "su": "Argentina"
+    },
+    "code": "AR",
+    "name": "Argentina",
+    "currency": "ARS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Argentina"
+  },
+  {
+    "name_translations": {
+      "en": "Germany"
+    },
+    "cases": {
+      "su": "Germany"
+    },
+    "code": "DE",
+    "name": "Germany",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Germany"
+  },
+  {
+    "name_translations": {
+      "en": "New Zealand"
+    },
+    "cases": {
+      "su": "New Zealand"
+    },
+    "code": "NZ",
+    "name": "New Zealand",
+    "currency": "NZD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/New_Zealand"
+  },
+  {
+    "name_translations": {
+      "en": "Haiti"
+    },
+    "cases": {
+      "su": "Haiti"
+    },
+    "code": "HT",
+    "name": "Haiti",
+    "currency": "HTG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Haiti"
+  },
+  {
+    "name_translations": {
+      "en": "Iraq"
+    },
+    "cases": {
+      "su": "Iraq"
+    },
+    "code": "IQ",
+    "name": "Iraq",
+    "currency": "IQD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Iraq"
+  },
+  {
+    "name_translations": {
+      "en": "India"
+    },
+    "cases": {
+      "su": "India"
+    },
+    "code": "IN",
+    "name": "India",
+    "currency": "INR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/India"
+  },
+  {
+    "name_translations": {
+      "en": "Bahrain"
+    },
+    "cases": {
+      "su": "Bahrain"
+    },
+    "code": "BH",
+    "name": "Bahrain",
+    "currency": "BHD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bahrain"
+  },
+  {
+    "name_translations": {
+      "en": "Portugal"
+    },
+    "cases": {
+      "su": "Portugal"
+    },
+    "code": "PT",
+    "name": "Portugal",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Portugal"
+  },
+  {
+    "name_translations": {
+      "en": "Kenya"
+    },
+    "cases": {
+      "su": "Kenya"
+    },
+    "code": "KE",
+    "name": "Kenya",
+    "currency": "KES",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kenya"
+  },
+  {
+    "name_translations": {
+      "en": "Chad"
+    },
+    "cases": {
+      "su": "Chad"
+    },
+    "code": "TD",
+    "name": "Chad",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Chad"
+  },
+  {
+    "name_translations": {
+      "en": "Sierra Leone"
+    },
+    "cases": {
+      "su": "Sierra Leone"
+    },
+    "code": "SL",
+    "name": "Sierra Leone",
+    "currency": "SLL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sierra_Leone"
+  },
+  {
+    "name_translations": {
+      "en": "Bulgaria"
+    },
+    "cases": {
+      "su": "Bulgaria"
+    },
+    "code": "BG",
+    "name": "Bulgaria",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bulgaria"
+  },
+  {
+    "name_translations": {
+      "en": "Comoros"
+    },
+    "cases": {
+      "su": "Comoros"
+    },
+    "code": "KM",
+    "name": "Comoros",
+    "currency": "KMF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Comoros"
+  },
+  {
+    "name_translations": {
+      "en": "Palau"
+    },
+    "cases": {
+      "su": "Palau"
+    },
+    "code": "PW",
+    "name": "Palau",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Palau"
+  },
+  {
+    "name_translations": {
+      "en": "Cocos (Keeling) Islands"
+    },
+    "cases": {
+      "su": "Cocos (Keeling) Islands"
+    },
+    "code": "CC",
+    "name": "Cocos (Keeling) Islands",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cocos_(Keeling)_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Suriname"
+    },
+    "cases": {
+      "su": "Suriname"
+    },
+    "code": "SR",
+    "name": "Suriname",
+    "currency": "SRD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Suriname"
+  },
+  {
+    "name_translations": {
+      "en": "Cameroon"
+    },
+    "cases": {
+      "su": "Cameroon"
+    },
+    "code": "CM",
+    "name": "Cameroon",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cameroon"
+  },
+  {
+    "name_translations": {
+      "en": "Cambodia"
+    },
+    "cases": {
+      "su": "Cambodia"
+    },
+    "code": "KH",
+    "name": "Cambodia",
+    "currency": "KHR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cambodia"
+  },
+  {
+    "name_translations": {
+      "en": "Lithuania"
+    },
+    "cases": {
+      "su": "Lithuania"
+    },
+    "code": "LT",
+    "name": "Lithuania",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Lithuania"
+  },
+  {
+    "name_translations": {
+      "en": "Gibraltar"
+    },
+    "cases": {
+      "su": "Gibraltar"
+    },
+    "code": "GI",
+    "name": "Gibraltar",
+    "currency": "GIP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Gibraltar"
+  },
+  {
+    "name_translations": {
+      "en": "Tunisia"
+    },
+    "cases": {
+      "su": "Tunisia"
+    },
+    "code": "TN",
+    "name": "Tunisia",
+    "currency": "TND",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Tunisia"
+  },
+  {
+    "name_translations": {
+      "en": "Saint Pierre and Miquelon"
+    },
+    "cases": {
+      "su": "Saint Pierre and Miquelon"
+    },
+    "code": "PM",
+    "name": "Saint Pierre and Miquelon",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saint_Pierre_and_Miquelon"
+  },
+  {
+    "name_translations": {
+      "en": "Vanuatu"
+    },
+    "cases": {
+      "su": "Vanuatu"
+    },
+    "code": "VU",
+    "name": "Vanuatu",
+    "currency": "VUV",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Vanuatu"
+  },
+  {
+    "name_translations": {
+      "en": "Turkmenistan"
+    },
+    "cases": {
+      "su": "Turkmenistan"
+    },
+    "code": "TM",
+    "name": "Turkmenistan",
+    "currency": "TMT",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Turkmenistan"
+  },
+  {
+    "name_translations": {
+      "en": "Qatar"
+    },
+    "cases": {
+      "su": "Qatar"
+    },
+    "code": "QA",
+    "name": "Qatar",
+    "currency": "QAR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Qatar"
+  },
+  {
+    "name_translations": {
+      "en": "Switzerland"
+    },
+    "cases": {
+      "su": "Switzerland"
+    },
+    "code": "CH",
+    "name": "Switzerland",
+    "currency": "CHF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Switzerland"
+  },
+  {
+    "name_translations": {
+      "en": "Barbados"
+    },
+    "cases": {
+      "su": "Barbados"
+    },
+    "code": "BB",
+    "name": "Barbados",
+    "currency": "BBD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Barbados"
+  },
+  {
+    "name_translations": {
+      "en": "Sudan"
+    },
+    "cases": {
+      "su": "Sudan"
+    },
+    "code": "SD",
+    "name": "Sudan",
+    "currency": "SDG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sudan"
+  },
+  {
+    "name_translations": {
+      "en": "Macau"
+    },
+    "cases": {
+      "su": "Macau"
+    },
+    "code": "MO",
+    "name": "Macau",
+    "currency": "MOP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Macau"
+  },
+  {
+    "name_translations": {
+      "en": "Saint Vincent and the Grenadines"
+    },
+    "cases": {
+      "su": "Saint Vincent and the Grenadines"
+    },
+    "code": "VC",
+    "name": "Saint Vincent and the Grenadines",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines"
+  },
+  {
+    "name_translations": {
+      "en": "Tajikistan"
+    },
+    "cases": {
+      "su": "Tajikistan"
+    },
+    "code": "TJ",
+    "name": "Tajikistan",
+    "currency": "TJS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Tajikistan"
+  },
+  {
+    "name_translations": {
+      "en": "Greece"
+    },
+    "cases": {
+      "su": "Greece"
+    },
+    "code": "GR",
+    "name": "Greece",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Greece"
+  },
+  {
+    "name_translations": {
+      "en": "Caribbean Netherlands"
+    },
+    "cases": {
+      "su": "Caribbean Netherlands"
+    },
+    "code": "BQ",
+    "name": "Caribbean Netherlands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Caribbean_Netherlands"
+  },
+  {
+    "name_translations": {
+      "en": "Italy"
+    },
+    "cases": {
+      "su": "Italy"
+    },
+    "code": "IT",
+    "name": "Italy",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Italy"
+  },
+  {
+    "name_translations": {
+      "en": "Serbia"
+    },
+    "cases": {
+      "su": "Serbia"
+    },
+    "code": "RS",
+    "name": "Serbia",
+    "currency": "RSD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Serbia"
+  },
+  {
+    "name_translations": {
+      "en": "Belize"
+    },
+    "cases": {
+      "su": "Belize"
+    },
+    "code": "BZ",
+    "name": "Belize",
+    "currency": "BZD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Belize"
+  },
+  {
+    "name_translations": {
+      "en": "Poland"
+    },
+    "cases": {
+      "su": "Poland"
+    },
+    "code": "PL",
+    "name": "Poland",
+    "currency": "PLN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Poland"
+  },
+  {
+    "name_translations": {
+      "en": "Panama"
+    },
+    "cases": {
+      "su": "Panama"
+    },
+    "code": "PA",
+    "name": "Panama",
+    "currency": "PAB",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Panama"
+  },
+  {
+    "name_translations": {
+      "en": "United Arab Emirates"
+    },
+    "cases": {
+      "su": "United Arab Emirates"
+    },
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "currency": "AED",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
+  },
+  {
+    "name_translations": {
+      "en": "Senegal"
+    },
+    "cases": {
+      "su": "Senegal"
+    },
+    "code": "SN",
+    "name": "Senegal",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Senegal"
+  },
+  {
+    "name_translations": {
+      "en": "Maldives"
+    },
+    "cases": {
+      "su": "Maldives"
+    },
+    "code": "MV",
+    "name": "Maldives",
+    "currency": "MVR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Maldives"
+  },
+  {
+    "name_translations": {
+      "en": "Vietnam"
+    },
+    "cases": {
+      "su": "Vietnam"
+    },
+    "code": "VN",
+    "name": "Vietnam",
+    "currency": "VND",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Vietnam"
+  },
+  {
+    "name_translations": {
+      "en": "Latvia"
+    },
+    "cases": {
+      "su": "Latvia"
+    },
+    "code": "LV",
+    "name": "Latvia",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Latvia"
+  },
+  {
+    "name_translations": {
+      "en": "Nicaragua"
+    },
+    "cases": {
+      "su": "Nicaragua"
+    },
+    "code": "NI",
+    "name": "Nicaragua",
+    "currency": "NIO",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Nicaragua"
+  },
+  {
+    "name_translations": {
+      "en": "Solomon Islands"
+    },
+    "cases": {
+      "su": "Solomon Islands"
+    },
+    "code": "SB",
+    "name": "Solomon Islands",
+    "currency": "SBD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Solomon_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "U.S. Virgin Islands"
+    },
+    "cases": {
+      "su": "U.S. Virgin Islands"
+    },
+    "code": "VI",
+    "name": "U.S. Virgin Islands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/U.S._Virgin_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Falkland Islands"
+    },
+    "cases": {
+      "su": "Falkland Islands"
+    },
+    "code": "FK",
+    "name": "Falkland Islands",
+    "currency": "FKP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Falkland_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Bolivia"
+    },
+    "cases": {
+      "su": "Bolivia"
+    },
+    "code": "BO",
+    "name": "Bolivia",
+    "currency": "BOB",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bolivia"
+  },
+  {
+    "name_translations": {
+      "en": "Djibouti"
+    },
+    "cases": {
+      "su": "Djibouti"
+    },
+    "code": "DJ",
+    "name": "Djibouti",
+    "currency": "DJF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Djibouti"
+  },
+  {
+    "name_translations": {
+      "en": "Indonesia"
+    },
+    "cases": {
+      "su": "Indonesia"
+    },
+    "code": "ID",
+    "name": "Indonesia",
+    "currency": "IDR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Indonesia"
+  },
+  {
+    "name_translations": {
+      "en": "United States"
+    },
+    "cases": {
+      "su": "United States"
+    },
+    "code": "US",
+    "name": "United States",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/United_States"
+  },
+  {
+    "name_translations": {
+      "en": "Marshall Islands"
+    },
+    "cases": {
+      "su": "Marshall Islands"
+    },
+    "code": "MH",
+    "name": "Marshall Islands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Marshall_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Niue"
+    },
+    "cases": {
+      "su": "Niue"
+    },
+    "code": "NU",
+    "name": "Niue",
+    "currency": "NZD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Niue"
+  },
+  {
+    "name_translations": {
+      "en": "Aruba"
+    },
+    "cases": {
+      "su": "Aruba"
+    },
+    "code": "AW",
+    "name": "Aruba",
+    "currency": "AWG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Aruba"
+  },
+  {
+    "name_translations": {
+      "en": "Gambia"
+    },
+    "cases": {
+      "su": "Gambia"
+    },
+    "code": "GM",
+    "name": "Gambia",
+    "currency": "GMD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Gambia"
+  },
+  {
+    "name_translations": {
+      "en": "Guinea-Bissau"
+    },
+    "cases": {
+      "su": "Guinea-Bissau"
+    },
+    "code": "GW",
+    "name": "Guinea-Bissau",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guinea-Bissau"
+  },
+  {
+    "name_translations": {
+      "en": "Bermuda"
+    },
+    "cases": {
+      "su": "Bermuda"
+    },
+    "code": "BM",
+    "name": "Bermuda",
+    "currency": "BMD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bermuda"
+  },
+  {
+    "name_translations": {
+      "en": "Fiji"
+    },
+    "cases": {
+      "su": "Fiji"
+    },
+    "code": "FJ",
+    "name": "Fiji",
+    "currency": "FJD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Fiji"
+  },
+  {
+    "name_translations": {
+      "en": "Taiwan"
+    },
+    "cases": {
+      "su": "Taiwan"
+    },
+    "code": "TW",
+    "name": "Taiwan",
+    "currency": "TWD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Taiwan"
+  },
+  {
+    "name_translations": {
+      "en": "Czech Republic"
+    },
+    "cases": {
+      "su": "Czech Republic"
+    },
+    "code": "CZ",
+    "name": "Czech Republic",
+    "currency": "CZK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Czech_Republic"
+  },
+  {
+    "name_translations": {
+      "en": "Venezuela"
+    },
+    "cases": {
+      "su": "Venezuela"
+    },
+    "code": "VE",
+    "name": "Venezuela",
+    "currency": "VEF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Venezuela"
+  },
+  {
+    "name_translations": {
+      "en": "Christmas Island"
+    },
+    "cases": {
+      "su": "Christmas Island"
+    },
+    "code": "CX",
+    "name": "Christmas Island",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Christmas_Island"
+  },
+  {
+    "name_translations": {
+      "en": "Denmark"
+    },
+    "cases": {
+      "su": "Denmark"
+    },
+    "code": "DK",
+    "name": "Denmark",
+    "currency": "DKK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Denmark"
+  },
+  {
+    "name_translations": {
+      "en": "Austria"
+    },
+    "cases": {
+      "su": "Austria"
+    },
+    "code": "AT",
+    "name": "Austria",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Austria"
+  },
+  {
+    "name_translations": {
+      "en": "Bahamas"
+    },
+    "cases": {
+      "su": "Bahamas"
+    },
+    "code": "BS",
+    "name": "Bahamas",
+    "currency": "BSD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bahamas"
+  },
+  {
+    "name_translations": {
+      "en": "Ghana"
+    },
+    "cases": {
+      "su": "Ghana"
+    },
+    "code": "GH",
+    "name": "Ghana",
+    "currency": "GHS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ghana"
+  },
+  {
+    "name_translations": {
+      "en": "Cook Islands"
+    },
+    "cases": {
+      "su": "Cook Islands"
+    },
+    "code": "CK",
+    "name": "Cook Islands",
+    "currency": "NZD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cook_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Georgia"
+    },
+    "cases": {
+      "su": "Georgia"
+    },
+    "code": "GE",
+    "name": "Georgia",
+    "currency": "GEL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Georgia_(country)"
+  },
+  {
+    "name_translations": {
+      "en": "Montserrat"
+    },
+    "cases": {
+      "su": "Montserrat"
+    },
+    "code": "MS",
+    "name": "Montserrat",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Montserrat"
+  },
+  {
+    "name_translations": {
+      "en": "Thailand"
+    },
+    "cases": {
+      "su": "Thailand"
+    },
+    "code": "TH",
+    "name": "Thailand",
+    "currency": "THB",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Thailand"
+  },
+  {
+    "name_translations": {
+      "en": "Kuwait"
+    },
+    "cases": {
+      "su": "Kuwait"
+    },
+    "code": "KW",
+    "name": "Kuwait",
+    "currency": "KWD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kuwait"
+  },
+  {
+    "name_translations": {
+      "en": "Afghanistan"
+    },
+    "cases": {
+      "su": "Afghanistan"
+    },
+    "code": "AF",
+    "name": "Afghanistan",
+    "currency": "AFN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Afghanistan"
+  },
+  {
+    "name_translations": {
+      "en": "Ethiopia"
+    },
+    "cases": {
+      "su": "Ethiopia"
+    },
+    "code": "ET",
+    "name": "Ethiopia",
+    "currency": "ETB",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ethiopia"
+  },
+  {
+    "name_translations": {
+      "en": "Armenia"
+    },
+    "cases": {
+      "su": "Armenia"
+    },
+    "code": "AM",
+    "name": "Armenia",
+    "currency": "AMD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Armenia"
+  },
+  {
+    "name_translations": {
+      "en": "Mongolia"
+    },
+    "cases": {
+      "su": "Mongolia"
+    },
+    "code": "MN",
+    "name": "Mongolia",
+    "currency": "MNT",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mongolia"
+  },
+  {
+    "name_translations": {
+      "en": "Kyrgyzstan"
+    },
+    "cases": {
+      "su": "Kyrgyzstan"
+    },
+    "code": "KG",
+    "name": "Kyrgyzstan",
+    "currency": "KGS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kyrgyzstan"
+  },
+  {
+    "name_translations": {
+      "en": "Romania"
+    },
+    "cases": {
+      "su": "Romania"
+    },
+    "code": "RO",
+    "name": "Romania",
+    "currency": "RON",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Romania"
+  },
+  {
+    "name_translations": {
+      "en": "Colombia"
+    },
+    "cases": {
+      "su": "Colombia"
+    },
+    "code": "CO",
+    "name": "Colombia",
+    "currency": "COP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Colombia"
+  },
+  {
+    "name_translations": {
+      "en": "Mauritania"
+    },
+    "cases": {
+      "su": "Mauritania"
+    },
+    "code": "MR",
+    "name": "Mauritania",
+    "currency": "MRO",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mauritania"
+  },
+  {
+    "name_translations": {
+      "en": "Nigeria"
+    },
+    "cases": {
+      "su": "Nigeria"
+    },
+    "code": "NG",
+    "name": "Nigeria",
+    "currency": "NGN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Nigeria"
+  },
+  {
+    "name_translations": {
+      "en": "Bangladesh"
+    },
+    "cases": {
+      "su": "Bangladesh"
+    },
+    "code": "BD",
+    "name": "Bangladesh",
+    "currency": "BDT",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bangladesh"
+  },
+  {
+    "name_translations": {
+      "en": "North Macedonia"
+    },
+    "cases": {
+      "su": "North Macedonia"
+    },
+    "code": "MK",
+    "name": "North Macedonia",
+    "currency": "MKD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Macedonia"
+  },
+  {
+    "name_translations": {
+      "en": "Abkhazia"
+    },
+    "cases": {
+      "su": "Abkhazia"
+    },
+    "code": "AB",
+    "name": "Abkhazia",
+    "currency": "RUB",
+    "wikipedia_link": ""
+  },
+  {
+    "name_translations": {
+      "en": "Madagascar"
+    },
+    "cases": {
+      "su": "Madagascar"
+    },
+    "code": "MG",
+    "name": "Madagascar",
+    "currency": "MGA",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Madagascar"
+  },
+  {
+    "name_translations": {
+      "en": "Oman"
+    },
+    "cases": {
+      "su": "Oman"
+    },
+    "code": "OM",
+    "name": "Oman",
+    "currency": "OMR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Oman"
+  },
+  {
+    "name_translations": {
+      "en": "Ecuador"
+    },
+    "cases": {
+      "su": "Ecuador"
+    },
+    "code": "EC",
+    "name": "Ecuador",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ecuador"
+  },
+  {
+    "name_translations": {
+      "en": "Mayotte"
+    },
+    "cases": {
+      "su": "Mayotte"
+    },
+    "code": "YT",
+    "name": "Mayotte",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mayotte"
+  },
+  {
+    "name_translations": {
+      "en": "Seychelles"
+    },
+    "cases": {
+      "su": "Seychelles"
+    },
+    "code": "SC",
+    "name": "Seychelles",
+    "currency": "SCR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Seychelles"
+  },
+  {
+    "name_translations": {
+      "en": "Northern Cyprus"
+    },
+    "cases": {
+      "su": "Northern Cyprus"
+    },
+    "code": "NY",
+    "name": "Northern Cyprus",
+    "currency": "TRY",
+    "wikipedia_link": ""
+  },
+  {
+    "name_translations": {
+      "en": "Uruguay"
+    },
+    "cases": {
+      "su": "Uruguay"
+    },
+    "code": "UY",
+    "name": "Uruguay",
+    "currency": "UYU",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Uruguay"
+  },
+  {
+    "name_translations": {
+      "en": "Martinique"
+    },
+    "cases": {
+      "su": "Martinique"
+    },
+    "code": "MQ",
+    "name": "Martinique",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Martinique"
+  },
+  {
+    "name_translations": {
+      "en": "China"
+    },
+    "cases": {
+      "su": "China"
+    },
+    "code": "CN",
+    "name": "China",
+    "currency": "CNY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/China"
+  },
+  {
+    "name_translations": {
+      "en": "American Samoa"
+    },
+    "cases": {
+      "su": "American Samoa"
+    },
+    "code": "AS",
+    "name": "American Samoa",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/American_Samoa"
+  },
+  {
+    "name_translations": {
+      "en": "South Africa"
+    },
+    "cases": {
+      "su": "South Africa"
+    },
+    "code": "ZA",
+    "name": "South Africa",
+    "currency": "ZAR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/South_Africa"
+  },
+  {
+    "name_translations": {
+      "en": "Turks and Caicos Islands"
+    },
+    "cases": {
+      "su": "Turks and Caicos Islands"
+    },
+    "code": "TC",
+    "name": "Turks and Caicos Islands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Turks_and_Caicos_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Japan"
+    },
+    "cases": {
+      "su": "Japan"
+    },
+    "code": "JP",
+    "name": "Japan",
+    "currency": "JPY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Japan"
+  },
+  {
+    "name_translations": {
+      "en": "Anguilla"
+    },
+    "cases": {
+      "su": "Anguilla"
+    },
+    "code": "AI",
+    "name": "Anguilla",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Anguilla"
+  },
+  {
+    "name_translations": {
+      "en": "Russia"
+    },
+    "cases": {
+      "su": "Russia"
+    },
+    "code": "RU",
+    "name": "Russia",
+    "currency": "RUB",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Russia"
+  },
+  {
+    "name_translations": {
+      "en": "Albania"
+    },
+    "cases": {
+      "su": "Albania"
+    },
+    "code": "AL",
+    "name": "Albania",
+    "currency": "ALL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Albania"
+  },
+  {
+    "name_translations": {
+      "en": "Zimbabwe"
+    },
+    "cases": {
+      "su": "Zimbabwe"
+    },
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "currency": "ZWD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Zimbabwe"
+  },
+  {
+    "name_translations": {
+      "en": "Libya"
+    },
+    "cases": {
+      "su": "Libya"
+    },
+    "code": "LY",
+    "name": "Libya",
+    "currency": "LYD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Libya"
+  },
+  {
+    "name_translations": {
+      "en": "Malawi"
+    },
+    "cases": {
+      "su": "Malawi"
+    },
+    "code": "MW",
+    "name": "Malawi",
+    "currency": "MWK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Malawi"
+  },
+  {
+    "name_translations": {
+      "en": "Yemen"
+    },
+    "cases": {
+      "su": "Yemen"
+    },
+    "code": "YE",
+    "name": "Yemen",
+    "currency": "YER",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Yemen"
+  },
+  {
+    "name_translations": {
+      "en": "New Caledonia"
+    },
+    "cases": {
+      "su": "New Caledonia"
+    },
+    "code": "NC",
+    "name": "New Caledonia",
+    "currency": "XPF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/New_Caledonia"
+  },
+  {
+    "name_translations": {
+      "en": "Netherlands"
+    },
+    "cases": {
+      "su": "Netherlands"
+    },
+    "code": "NL",
+    "name": "Netherlands",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Netherlands"
+  },
+  {
+    "name_translations": {
+      "en": "Guatemala"
+    },
+    "cases": {
+      "su": "Guatemala"
+    },
+    "code": "GT",
+    "name": "Guatemala",
+    "currency": "GTQ",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guatemala"
+  },
+  {
+    "name_translations": {
+      "en": "Zambia"
+    },
+    "cases": {
+      "su": "Zambia"
+    },
+    "code": "ZM",
+    "name": "Zambia",
+    "currency": "ZMK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Zambia"
+  },
+  {
+    "name_translations": {
+      "en": "Jordan"
+    },
+    "cases": {
+      "su": "Jordan"
+    },
+    "code": "JO",
+    "name": "Jordan",
+    "currency": "JOD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Jordan"
+  },
+  {
+    "name_translations": {
+      "en": "Belarus"
+    },
+    "cases": {
+      "su": "Belarus"
+    },
+    "code": "BY",
+    "name": "Belarus",
+    "currency": "BYN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Belarus"
+  },
+  {
+    "name_translations": {
+      "en": "Jersey"
+    },
+    "cases": {
+      "su": "Jersey"
+    },
+    "code": "JE",
+    "name": "Jersey",
+    "currency": "GBP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Jersey"
+  },
+  {
+    "name_translations": {
+      "en": "Nauru"
+    },
+    "cases": {
+      "su": "Nauru"
+    },
+    "code": "NR",
+    "name": "Nauru",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Nauru"
+  },
+  {
+    "name_translations": {
+      "en": "Saint Lucia"
+    },
+    "cases": {
+      "su": "Saint Lucia"
+    },
+    "code": "LC",
+    "name": "Saint Lucia",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saint_Lucia"
+  },
+  {
+    "name_translations": {
+      "en": "Guadeloupe"
+    },
+    "cases": {
+      "su": "Guadeloupe"
+    },
+    "code": "GP",
+    "name": "Guadeloupe",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guadeloupe"
+  },
+  {
+    "name_translations": {
+      "en": "Bhutan"
+    },
+    "cases": {
+      "su": "Bhutan"
+    },
+    "code": "BT",
+    "name": "Bhutan",
+    "currency": "BTN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bhutan"
+  },
+  {
+    "name_translations": {
+      "en": "Northern Mariana Islands"
+    },
+    "cases": {
+      "su": "Northern Mariana Islands"
+    },
+    "code": "MP",
+    "name": "Northern Mariana Islands",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Northern_Mariana_Islands"
+  },
+  {
+    "name_translations": {
+      "en": "Saint Kitts and Nevis"
+    },
+    "cases": {
+      "su": "Saint Kitts and Nevis"
+    },
+    "code": "KN",
+    "name": "Saint Kitts and Nevis",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis"
+  },
+  {
+    "name_translations": {
+      "en": "Sint Maarten"
+    },
+    "cases": {
+      "su": "Sint Maarten"
+    },
+    "code": "SX",
+    "name": "Sint Maarten",
+    "currency": "ANG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Sint_Maarten"
+  },
+  {
+    "name_translations": {
+      "en": "Hungary"
+    },
+    "cases": {
+      "su": "Hungary"
+    },
+    "code": "HU",
+    "name": "Hungary",
+    "currency": "HUF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Hungary"
+  },
+  {
+    "name_translations": {
+      "en": "North Korea"
+    },
+    "cases": {
+      "su": "North Korea"
+    },
+    "code": "KP",
+    "name": "North Korea",
+    "currency": "KPW",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/North_Korea"
+  },
+  {
+    "name_translations": {
+      "en": "Cyprus"
+    },
+    "cases": {
+      "su": "Cyprus"
+    },
+    "code": "CY",
+    "name": "Cyprus",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cyprus"
+  },
+  {
+    "name_translations": {
+      "en": "Lebanon"
+    },
+    "cases": {
+      "su": "Lebanon"
+    },
+    "code": "LB",
+    "name": "Lebanon",
+    "currency": "LBP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Lebanon"
+  },
+  {
+    "name_translations": {
+      "en": "Western Sahara"
+    },
+    "cases": {
+      "su": "Western Sahara"
+    },
+    "code": "EH",
+    "name": "Western Sahara",
+    "currency": "MAD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Western_Sahara"
+  },
+  {
+    "name_translations": {
+      "en": "Trinidad and Tobago"
+    },
+    "cases": {
+      "su": "Trinidad and Tobago"
+    },
+    "code": "TT",
+    "name": "Trinidad and Tobago",
+    "currency": "TTD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Trinidad_and_Tobago"
+  },
+  {
+    "name_translations": {
+      "en": "Antigua and Barbuda"
+    },
+    "cases": {
+      "su": "Antigua and Barbuda"
+    },
+    "code": "AG",
+    "name": "Antigua and Barbuda",
+    "currency": "XCD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Antigua_and_Barbuda"
+  },
+  {
+    "name_translations": {
+      "en": "Peru"
+    },
+    "cases": {
+      "su": "Peru"
+    },
+    "code": "PE",
+    "name": "Peru",
+    "currency": "PEN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Perú"
+  },
+  {
+    "name_translations": {
+      "en": "Guinea"
+    },
+    "cases": {
+      "su": "Guinea"
+    },
+    "code": "GN",
+    "name": "Guinea",
+    "currency": "GNF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guinea"
+  },
+  {
+    "name_translations": {
+      "en": "Croatia"
+    },
+    "cases": {
+      "su": "Croatia"
+    },
+    "code": "HR",
+    "name": "Croatia",
+    "currency": "HRK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Croatia"
+  },
+  {
+    "name_translations": {
+      "en": "Togo"
+    },
+    "cases": {
+      "su": "Togo"
+    },
+    "code": "TG",
+    "name": "Togo",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Togo"
+  },
+  {
+    "name_translations": {
+      "en": "Niger"
+    },
+    "cases": {
+      "su": "Niger"
+    },
+    "code": "NE",
+    "name": "Niger",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Niger"
+  },
+  {
+    "name_translations": {
+      "en": "Spain"
+    },
+    "cases": {
+      "su": "Spain"
+    },
+    "code": "ES",
+    "name": "Spain",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Spain"
+  },
+  {
+    "name_translations": {
+      "en": "Namibia"
+    },
+    "cases": {
+      "su": "Namibia"
+    },
+    "code": "NA",
+    "name": "Namibia",
+    "currency": "NAD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Namibia"
+  },
+  {
+    "name_translations": {
+      "en": "Crimea"
+    },
+    "cases": {
+      "su": "Crimea"
+    },
+    "code": "KX",
+    "name": "Crimea",
+    "currency": "",
+    "wikipedia_link": ""
+  },
+  {
+    "name_translations": {
+      "en": "Norway"
+    },
+    "cases": {
+      "su": "Norway"
+    },
+    "code": "NO",
+    "name": "Norway",
+    "currency": "NOK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Norway"
+  },
+  {
+    "name_translations": {
+      "en": "Dominican Republic"
+    },
+    "cases": {
+      "su": "Dominican Republic"
+    },
+    "code": "DO",
+    "name": "Dominican Republic",
+    "currency": "DOP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Dominican_Republic"
+  },
+  {
+    "name_translations": {
+      "en": "Turkey"
+    },
+    "cases": {
+      "su": "Turkey"
+    },
+    "code": "TR",
+    "name": "Turkey",
+    "currency": "TRY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Turkey"
+  },
+  {
+    "name_translations": {
+      "en": "Somalia"
+    },
+    "cases": {
+      "su": "Somalia"
+    },
+    "code": "SO",
+    "name": "Somalia",
+    "currency": "SOS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Somalia"
+  },
+  {
+    "name_translations": {
+      "en": "Greenland"
+    },
+    "cases": {
+      "su": "Greenland"
+    },
+    "code": "GL",
+    "name": "Greenland",
+    "currency": "DKK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Greenland"
+  },
+  {
+    "name_translations": {
+      "en": "Jamaica"
+    },
+    "cases": {
+      "su": "Jamaica"
+    },
+    "code": "JM",
+    "name": "Jamaica",
+    "currency": "JMD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Jamaica"
+  },
+  {
+    "name_translations": {
+      "en": "Botswana"
+    },
+    "cases": {
+      "su": "Botswana"
+    },
+    "code": "BW",
+    "name": "Botswana",
+    "currency": "BWP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Botswana"
+  },
+  {
+    "name_translations": {
+      "en": "Finland"
+    },
+    "cases": {
+      "su": "Finland"
+    },
+    "code": "FI",
+    "name": "Finland",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Finland"
+  },
+  {
+    "name_translations": {
+      "en": "Benin"
+    },
+    "cases": {
+      "su": "Benin"
+    },
+    "code": "BJ",
+    "name": "Benin",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Benin"
+  },
+  {
+    "name_translations": {
+      "en": "Wallis and Futuna"
+    },
+    "cases": {
+      "su": "Wallis and Futuna"
+    },
+    "code": "WF",
+    "name": "Wallis and Futuna",
+    "currency": "XPF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Wallis_and_Futuna"
+  },
+  {
+    "name_translations": {
+      "en": "Australia"
+    },
+    "cases": {
+      "su": "Australia"
+    },
+    "code": "AU",
+    "name": "Australia",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Australia"
+  },
+  {
+    "name_translations": {
+      "en": "Singapore"
+    },
+    "cases": {
+      "su": "Singapore"
+    },
+    "code": "SG",
+    "name": "Singapore",
+    "currency": "SGD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Singapore"
+  },
+  {
+    "name_translations": {
+      "en": "Mali"
+    },
+    "cases": {
+      "su": "Mali"
+    },
+    "code": "ML",
+    "name": "Mali",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Mali"
+  },
+  {
+    "name_translations": {
+      "en": "Tonga"
+    },
+    "cases": {
+      "su": "Tonga"
+    },
+    "code": "TO",
+    "name": "Tonga",
+    "currency": "TOP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Tonga"
+  },
+  {
+    "name_translations": {
+      "en": "Canada"
+    },
+    "cases": {
+      "su": "Canada"
+    },
+    "code": "CA",
+    "name": "Canada",
+    "currency": "CAD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Canada"
+  },
+  {
+    "name_translations": {
+      "en": "Norfolk Island"
+    },
+    "cases": {
+      "su": "Norfolk Island"
+    },
+    "code": "NF",
+    "name": "Norfolk Island",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Norfolk_Island"
+  },
+  {
+    "name_translations": {
+      "en": "Estonia"
+    },
+    "cases": {
+      "su": "Estonia"
+    },
+    "code": "EE",
+    "name": "Estonia",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Estonia"
+  },
+  {
+    "name_translations": {
+      "en": "Luxembourg"
+    },
+    "cases": {
+      "su": "Luxembourg"
+    },
+    "code": "LU",
+    "name": "Luxembourg",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Luxembourg"
+  },
+  {
+    "name_translations": {
+      "en": "Republic of the Congo"
+    },
+    "cases": {
+      "su": "Republic of the Congo"
+    },
+    "code": "CG",
+    "name": "Republic of the Congo",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Republic_of_the_Congo"
+  },
+  {
+    "name_translations": {
+      "en": "Guyana"
+    },
+    "cases": {
+      "su": "Guyana"
+    },
+    "code": "GY",
+    "name": "Guyana",
+    "currency": "GYD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guyana"
+  },
+  {
+    "name_translations": {
+      "en": "Central African Republic"
+    },
+    "cases": {
+      "su": "Central African Republic"
+    },
+    "code": "CF",
+    "name": "Central African Republic",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Central_African_Republic"
+  },
+  {
+    "name_translations": {
+      "en": "Guam"
+    },
+    "cases": {
+      "su": "Guam"
+    },
+    "code": "GU",
+    "name": "Guam",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guam"
+  },
+  {
+    "name_translations": {
+      "en": "Puerto Rico"
+    },
+    "cases": {
+      "su": "Puerto Rico"
+    },
+    "code": "PR",
+    "name": "Puerto Rico",
+    "currency": "USD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Puerto_Rico"
+  },
+  {
+    "name_translations": {
+      "en": "São Tomé and Príncipe"
+    },
+    "cases": {
+      "su": "São Tomé and Príncipe"
+    },
+    "code": "ST",
+    "name": "São Tomé and Príncipe",
+    "currency": "STD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/São_Tomé_and_Principe"
+  },
+  {
+    "name_translations": {
+      "en": "South Korea"
+    },
+    "cases": {
+      "su": "South Korea"
+    },
+    "code": "KR",
+    "name": "South Korea",
+    "currency": "KRW",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/South_Korea"
+  },
+  {
+    "name_translations": {
+      "en": "Chile"
+    },
+    "cases": {
+      "su": "Chile"
+    },
+    "code": "CL",
+    "name": "Chile",
+    "currency": "CLP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Chile"
+  },
+  {
+    "name_translations": {
+      "en": "Kiribati"
+    },
+    "cases": {
+      "su": "Kiribati"
+    },
+    "code": "KI",
+    "name": "Kiribati",
+    "currency": "AUD",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kiribati"
+  },
+  {
+    "name_translations": {
+      "en": "Samoa"
+    },
+    "cases": {
+      "su": "Samoa"
+    },
+    "code": "WS",
+    "name": "Samoa",
+    "currency": "WST",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Samoa"
+  },
+  {
+    "name_translations": {
+      "en": "Réunion"
+    },
+    "cases": {
+      "su": "Réunion"
+    },
+    "code": "RE",
+    "name": "Réunion",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Réunion"
+  },
+  {
+    "name_translations": {
+      "en": "Burundi"
+    },
+    "cases": {
+      "su": "Burundi"
+    },
+    "code": "BI",
+    "name": "Burundi",
+    "currency": "BIF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Burundi"
+  },
+  {
+    "name_translations": {
+      "en": "Egypt"
+    },
+    "cases": {
+      "su": "Egypt"
+    },
+    "code": "EG",
+    "name": "Egypt",
+    "currency": "EGP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Egypt"
+  },
+  {
+    "name_translations": {
+      "en": "Åland Islands"
+    },
+    "cases": {
+      "su": "Åland Islands"
+    },
+    "code": "AX",
+    "name": "Åland Islands",
+    "currency": "EUR",
+    "wikipedia_link": ""
+  },
+  {
+    "name_translations": {
+      "en": "Eswatini"
+    },
+    "cases": {
+      "su": "Eswatini"
+    },
+    "code": "SZ",
+    "name": "Eswatini",
+    "currency": "SZL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Eswatini"
+  },
+  {
+    "name_translations": {
+      "en": "Slovenia"
+    },
+    "cases": {
+      "su": "Slovenia"
+    },
+    "code": "SI",
+    "name": "Slovenia",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Slovenia"
+  },
+  {
+    "name_translations": {
+      "en": "Nepal"
+    },
+    "cases": {
+      "su": "Nepal"
+    },
+    "code": "NP",
+    "name": "Nepal",
+    "currency": "NPR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Nepal"
+  },
+  {
+    "name_translations": {
+      "en": "Equatorial Guinea"
+    },
+    "cases": {
+      "su": "Equatorial Guinea"
+    },
+    "code": "GQ",
+    "name": "Equatorial Guinea",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Equatorial_Guinea"
+  },
+  {
+    "name_translations": {
+      "en": "Philippines"
+    },
+    "cases": {
+      "su": "Philippines"
+    },
+    "code": "PH",
+    "name": "Philippines",
+    "currency": "PHP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Philippines"
+  },
+  {
+    "name_translations": {
+      "en": "Paraguay"
+    },
+    "cases": {
+      "su": "Paraguay"
+    },
+    "code": "PY",
+    "name": "Paraguay",
+    "currency": "PYG",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Paraguay"
+  },
+  {
+    "name_translations": {
+      "en": "Democratic Republic of the Congo"
+    },
+    "cases": {
+      "su": "Democratic Republic of the Congo"
+    },
+    "code": "CD",
+    "name": "Democratic Republic of the Congo",
+    "currency": "CDF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo"
+  },
+  {
+    "name_translations": {
+      "en": "Burkina Faso"
+    },
+    "cases": {
+      "su": "Burkina Faso"
+    },
+    "code": "BF",
+    "name": "Burkina Faso",
+    "currency": "XOF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Burkina_Faso"
+  },
+  {
+    "name_translations": {
+      "en": "Kosovo"
+    },
+    "cases": {
+      "su": "Kosovo"
+    },
+    "code": "XK",
+    "name": "Kosovo",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Kosovo"
+  },
+  {
+    "name_translations": {
+      "en": "Ukraine"
+    },
+    "cases": {
+      "su": "Ukraine"
+    },
+    "code": "UA",
+    "name": "Ukraine",
+    "currency": "UAH",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Ukraine"
+  },
+  {
+    "name_translations": {
+      "en": "France"
+    },
+    "cases": {
+      "su": "France"
+    },
+    "code": "FR",
+    "name": "France",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/France"
+  },
+  {
+    "name_translations": {
+      "en": "Azerbaijan"
+    },
+    "cases": {
+      "su": "Azerbaijan"
+    },
+    "code": "AZ",
+    "name": "Azerbaijan",
+    "currency": "AZN",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Azerbaijan"
+  },
+  {
+    "name_translations": {
+      "en": "Isle of Man"
+    },
+    "cases": {
+      "su": "Isle of Man"
+    },
+    "code": "IM",
+    "name": "Isle of Man",
+    "currency": "GBP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Isle_of_Man"
+  },
+  {
+    "name_translations": {
+      "en": "Costa Rica"
+    },
+    "cases": {
+      "su": "Costa Rica"
+    },
+    "code": "CR",
+    "name": "Costa Rica",
+    "currency": "CRC",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Costa_Rica"
+  },
+  {
+    "name_translations": {
+      "en": "Gabon"
+    },
+    "cases": {
+      "su": "Gabon"
+    },
+    "code": "GA",
+    "name": "Gabon",
+    "currency": "XAF",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Gabon"
+  },
+  {
+    "name_translations": {
+      "en": "Syria"
+    },
+    "cases": {
+      "su": "Syria"
+    },
+    "code": "SY",
+    "name": "Syria",
+    "currency": "SYP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Syria"
+  },
+  {
+    "name_translations": {
+      "en": "Saint Martin"
+    },
+    "cases": {
+      "su": "Saint Martin"
+    },
+    "code": "MF",
+    "name": "Saint Martin",
+    "currency": "EUR",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Saint_Martin_(France)"
+  },
+  {
+    "name_translations": {
+      "en": "Israel"
+    },
+    "cases": {
+      "su": "Israel"
+    },
+    "code": "IL",
+    "name": "Israel",
+    "currency": "ILS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Israel"
+  },
+  {
+    "name_translations": {
+      "en": "Cape Verde"
+    },
+    "cases": {
+      "su": "Cape Verde"
+    },
+    "code": "CV",
+    "name": "Cape Verde",
+    "currency": "CVE",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cape_Verde"
+  },
+  {
+    "name_translations": {
+      "en": "Guernsey"
+    },
+    "cases": {
+      "su": "Guernsey"
+    },
+    "code": "GG",
+    "name": "Guernsey",
+    "currency": "GBP",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Guernsey"
+  }
+]
