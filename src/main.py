@@ -1,20 +1,16 @@
 import logging
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
-
 from src.config import settings
 from src.database import db
 from src.cache import cache
 from src.limiter import limiter
-
 from src.endpoints.airports import router as airports_router
 from src.endpoints.cities import router as cities_router
 from src.endpoints.routes import router as routes_router
@@ -25,12 +21,13 @@ from src.endpoints.trips import router as trips_router
 # Configure logging
 logging.basicConfig(
     level=getattr(logging, settings.log_level),
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler('debug.log', encoding='utf-8')
-    ]
+        logging.FileHandler("debug.log", encoding="utf-8"),
+    ],
 )
+
 logger = logging.getLogger(__name__)
 
 @asynccontextmanager
@@ -46,16 +43,32 @@ async def lifespan(app: FastAPI):
         logger.error(f"Database connection failed: {e}")
         raise
 
-    # Sprawdzenie, czy baza była już inicjalizowana
+    # Optional: connect to Redis cache
+    try:
+        await cache.connect()
+        logger.info("Cache connected successfully")
+    except Exception as e:
+        logger.warning(f"Redis unavailable (cache disabled): {e}")
+
+    # --- DB initialization ---
     try:
         async with db.get_connection() as conn:
+            # Tworzymy tabelę app_meta jeśli nie istnieje
+            await conn.execute("""
+                CREATE TABLE IF NOT EXISTS app_meta (
+                    key TEXT PRIMARY KEY,
+                    value TEXT
+                )
+            """)
+            # Sprawdzamy, czy już była inicjalizacja
             row = await conn.fetchrow("SELECT value FROM app_meta WHERE key='initialized'")
             initialized = row['value'] if row else None
+
         if not initialized:
             logger.info("Running DB initialization script...")
-            from init_db import run_init
+            from init_db import run_init  # import tutaj, żeby uniknąć błędów przy braku modułu
             async with db.get_connection() as conn:
-                await run_init(conn)  # Twój init_db musi przyjmować conn
+                await run_init(conn)
                 await conn.execute(
                     "INSERT INTO app_meta(key, value) VALUES($1, $2)",
                     "initialized", "1"
@@ -64,20 +77,21 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"Błąd inicjalizacji bazy: {e}")
 
-    # Redis is optional – failure here does not prevent startup
-    try:
-        await cache.connect()
-        logger.info("Cache connected successfully")
-    except Exception as e:
-        logger.warning(f"Cache connection failed: {e}")
+    yield  # koniec startup
 
-    yield
-
+    # Shutdown
     logger.info("Shutting down...")
-    await db.disconnect()
-    await cache.disconnect()
-    logger.info("Database disconnected")
+    try:
+        await db.disconnect()
+        logger.info("Database disconnected")
+    except Exception as e:
+        logger.warning(f"Error disconnecting database: {e}")
 
+    try:
+        await cache.disconnect()
+        logger.info("Cache disconnected")
+    except Exception as e:
+        logger.warning(f"Error disconnecting cache: {e}")
 
 # Create FastAPI app
 app = FastAPI(
@@ -116,7 +130,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
         content={"success": False, "error": "Internal server error"},
     )
 
-# --- CORS ---
+# --- CORS middleware ---
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
@@ -153,12 +167,12 @@ async def root():
         },
     }
 
-# --- Health check ---
+# --- Health check endpoint ---
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
 
-# --- Main entry ---
+# --- Main ---
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
