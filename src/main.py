@@ -16,6 +16,7 @@ from src.endpoints.routes import router as routes_router
 from src.endpoints.search import router as search_router
 from src.endpoints.flights import router as flights_router
 from src.endpoints.trips import router as trips_router
+from init_db import run_init
 import logging
 
 # Configure logging
@@ -27,9 +28,7 @@ logging.basicConfig(
         logging.FileHandler('debug.log', encoding='utf-8')
     ]
 )
-
 logger = logging.getLogger(__name__)
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -44,6 +43,19 @@ async def lifespan(app: FastAPI):
 
     # Redis is optional – failure here does not prevent startup
     await cache.connect()
+    logger.info("Cache connected successfully")
+
+    # ---- Auto-init bazy danych
+    try:
+        row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
+        if not row:
+            logger.warning("Baza danych nie zainicjalizowana, uruchamiam init")
+            await run_init()
+        else:
+            logger.info("Baza danych już zainicjalizowana")
+    except Exception as e:
+        logger.error(f"Błąd inicjalizacji bazy: {e}", exc_info=True)
+        raise
 
     yield
 
@@ -138,6 +150,16 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+
+# ---- Manual init endpoint ----
+@app.post("/admin/init")
+async def manual_init():
+    row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
+    if row:
+        return {"status": "already initialized"}
+    await run_init()
+    return {"status": "initialized"}
 
 
 if __name__ == "__main__":
