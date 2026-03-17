@@ -14,7 +14,7 @@ async def load_json(file_name: str):
         return json.load(f)
 
 
-async def run_init():
+async def run_init(_app=None):
     """
     Pełna inicjalizacja bazy danych w wersji produkcyjnej,
     odwzorowująca init.sql:
