@@ -58,5 +58,16 @@ class Database:
         async with self.get_connection() as conn:
             return await conn.fetch(query, *args)
 
+    async def fetch_val(self, query: str, *args):
+        """
+        Wykonuje zapytanie i zwraca pierwszą kolumnę pierwszego wiersza.
+        Przydatne do zapytań typu SELECT COUNT(*) ...
+        """
+        async with self.get_connection() as conn:
+            row = await conn.fetchrow(query, *args)
+            if row:
+                return row[0]
+            return None
+
 
 db = Database()
