@@ -1,23 +1,26 @@
+import logging
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from contextlib import asynccontextmanager
-from slowapi.errors import RateLimitExceeded
+
 from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+
 from src.config import settings
 from src.database import db
 from src.cache import cache
 from src.limiter import limiter
+
 from src.endpoints.airports import router as airports_router
 from src.endpoints.cities import router as cities_router
 from src.endpoints.routes import router as routes_router
 from src.endpoints.search import router as search_router
 from src.endpoints.flights import router as flights_router
 from src.endpoints.trips import router as trips_router
-from init_db import run_init
-import logging
 
 # Configure logging
 logging.basicConfig(
@@ -34,6 +37,8 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     """Handle startup and shutdown events"""
     logger.info("Starting up...")
+
+    # Connect to database
     try:
         await db.connect()
         logger.info("Database connected successfully")
@@ -41,21 +46,30 @@ async def lifespan(app: FastAPI):
         logger.error(f"Database connection failed: {e}")
         raise
 
-    # Redis is optional – failure here does not prevent startup
-    await cache.connect()
-    logger.info("Cache connected successfully")
-
-    # ---- Auto-init bazy danych
+    # Sprawdzenie, czy baza była już inicjalizowana
     try:
-        row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
-        if not row:
-            logger.warning("Baza danych nie zainicjalizowana, uruchamiam init")
-            await run_init()
-        else:
-            logger.info("Baza danych już zainicjalizowana")
+        async with db.get_connection() as conn:
+            row = await conn.fetchrow("SELECT value FROM app_meta WHERE key='initialized'")
+            initialized = row['value'] if row else None
+        if not initialized:
+            logger.info("Running DB initialization script...")
+            from init_db import run_init
+            async with db.get_connection() as conn:
+                await run_init(conn)  # Twój init_db musi przyjmować conn
+                await conn.execute(
+                    "INSERT INTO app_meta(key, value) VALUES($1, $2)",
+                    "initialized", "1"
+                )
+            logger.info("Database initialized successfully")
     except Exception as e:
-        logger.error(f"Błąd inicjalizacji bazy: {e}", exc_info=True)
-        raise
+        logger.error(f"Błąd inicjalizacji bazy: {e}")
+
+    # Redis is optional – failure here does not prevent startup
+    try:
+        await cache.connect()
+        logger.info("Cache connected successfully")
+    except Exception as e:
+        logger.warning(f"Cache connection failed: {e}")
 
     yield
 
@@ -78,9 +92,7 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)  # type: ignore[arg-type]
 
-
 # --- Exception handlers ---
-
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     logger.warning(f"Validation error on {request.url}: {exc.errors()}")
@@ -89,14 +101,12 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={"success": False, "error": "Validation error", "details": exc.errors()},
     )
 
-
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     return JSONResponse(
         status_code=exc.status_code,
         content={"success": False, "error": exc.detail},
     )
-
 
 @app.exception_handler(Exception)
 async def generic_exception_handler(request: Request, exc: Exception):
@@ -106,9 +116,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
         content={"success": False, "error": "Internal server error"},
     )
 
-
 # --- CORS ---
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
@@ -118,7 +126,6 @@ app.add_middleware(
 )
 
 # --- Routers ---
-
 app.include_router(airports_router)
 app.include_router(cities_router)
 app.include_router(routes_router)
@@ -126,7 +133,7 @@ app.include_router(search_router)
 app.include_router(flights_router)
 app.include_router(trips_router)
 
-
+# --- Root endpoint ---
 @app.get("/")
 async def root():
     return {
@@ -146,26 +153,16 @@ async def root():
         },
     }
 
-
+# --- Health check ---
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
 
-
-# ---- Manual init endpoint ----
-@app.post("/admin/init")
-async def manual_init():
-    row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
-    if row:
-        return {"status": "already initialized"}
-    await run_init()
-    return {"status": "initialized"}
-
-
+# --- Main entry ---
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "main:app",
+        "src.main:app",
         host="0.0.0.0",
         port=8000,
         reload=settings.debug,
