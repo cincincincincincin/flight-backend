@@ -9,12 +9,13 @@ DATA_DIR = Path(__file__).parent / "init_data"
 
 
 async def load_json(file_name: str):
+    """Wczytaj plik JSON z folderu init_data"""
     path = DATA_DIR / file_name
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
-async def run_init():
+async def run_init(app=None):
     """
     Pełna inicjalizacja bazy danych:
     - tworzenie tabel
@@ -26,7 +27,11 @@ async def run_init():
     await db.execute("SELECT pg_advisory_lock(123456)")
 
     # Sprawdź czy baza już jest zainicjalizowana
-    row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
+    try:
+        row = await db.fetch_one("SELECT value FROM app_meta WHERE key='initialized'")
+    except Exception:
+        row = None  # app_meta jeszcze nie istnieje
+
     if row:
         logger.info("Baza danych już zainicjalizowana, pomijam init")
         await db.execute("SELECT pg_advisory_unlock(123456)")
@@ -155,12 +160,10 @@ async def run_init():
             )
 
     # ---- 3. Flaga initialized
-    await db.execute(
-        """
+    await db.execute("""
         INSERT INTO app_meta (key, value) VALUES ('initialized','true')
         ON CONFLICT (key) DO UPDATE SET value='true';
-        """
-    )
+    """)
 
     logger.info("Inicjalizacja bazy zakończona")
     await db.execute("SELECT pg_advisory_unlock(123456)")
