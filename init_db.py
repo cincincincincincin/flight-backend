@@ -17,6 +17,7 @@ async def load_json(file_name: str):
 async def run_init(_app=None):
     """
     Pełna inicjalizacja bazy danych zgodnie z init.sql:
+    - usunięcie starych tabel (DROP TABLE ... CASCADE)
     - tworzenie tabel BEZ kluczy obcych
     - wczytanie danych z JSON
     - czyszczenie niepotrzebnych rekordów
@@ -37,12 +38,32 @@ async def run_init(_app=None):
     logger.info("Rozpoczynam inicjalizację bazy danych")
 
     # ============================================
+    # 0. USUNIĘCIE ISTNIEJĄCYCH TABEL (jeśli istnieją)
+    # ============================================
+    # Kolejność usuwania: najpierw te z zależnościami, potem główne
+    await db.execute("DROP TABLE IF EXISTS trip_flight_prices CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS trip_flights CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS trips CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS user_trips CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS flight_offers CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS flight_prices_cache CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS flights CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS airport_schedules_cache CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS routes CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS planes CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS airports CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS airlines CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS cities CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS countries CASCADE;")
+    await db.execute("DROP TABLE IF EXISTS app_meta CASCADE;")
+
+    # ============================================
     # 1. Tworzenie tabel (bez kluczy obcych)
     # ============================================
 
     # Tabela metadanych
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS app_meta (
+    CREATE TABLE app_meta (
         key TEXT PRIMARY KEY,
         value TEXT
     );
@@ -50,7 +71,7 @@ async def run_init(_app=None):
 
     # Kraje
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS countries (
+    CREATE TABLE countries (
         code VARCHAR(2) PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
         name_translations JSONB,
@@ -61,7 +82,7 @@ async def run_init(_app=None):
 
     # Miasta
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS cities (
+    CREATE TABLE cities (
         code VARCHAR(10) PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
         name_translations JSONB,
@@ -75,7 +96,7 @@ async def run_init(_app=None):
 
     # Linie lotnicze
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS airlines (
+    CREATE TABLE airlines (
         code VARCHAR(3) PRIMARY KEY,
         name VARCHAR(200) NOT NULL,
         name_translations JSONB,
@@ -85,7 +106,7 @@ async def run_init(_app=None):
 
     # Lotniska
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS airports (
+    CREATE TABLE airports (
         code VARCHAR(4) PRIMARY KEY,
         name VARCHAR(200) NOT NULL,
         name_translations JSONB,
@@ -100,15 +121,15 @@ async def run_init(_app=None):
 
     # Samoloty
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS planes (
+    CREATE TABLE planes (
         code VARCHAR(10) PRIMARY KEY,
         name VARCHAR(100) NOT NULL
     );
     """)
 
-    # Trasy (bez FK)
+    # Trasy
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS routes (
+    CREATE TABLE routes (
         id SERIAL PRIMARY KEY,
         airline_iata VARCHAR(3),
         airline_icao VARCHAR(3),
@@ -124,7 +145,7 @@ async def run_init(_app=None):
 
     # Cache dla rozkładów lotnisk
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS airport_schedules_cache (
+    CREATE TABLE airport_schedules_cache (
         id SERIAL PRIMARY KEY,
         airport_code VARCHAR(4) NOT NULL,
         direction VARCHAR(10) NOT NULL CHECK (direction IN ('Departure', 'Arrival', 'Both')),
@@ -138,7 +159,7 @@ async def run_init(_app=None):
 
     # Loty
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS flights (
+    CREATE TABLE flights (
         id SERIAL PRIMARY KEY,
         flight_number VARCHAR(20) NOT NULL,
         airline_code VARCHAR(3),
@@ -167,7 +188,7 @@ async def run_init(_app=None):
 
     # Cache cen biletów
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS flight_prices_cache (
+    CREATE TABLE flight_prices_cache (
         id SERIAL PRIMARY KEY,
         origin_city_code VARCHAR(3) NOT NULL,
         destination_city_code VARCHAR(3) NOT NULL,
@@ -180,7 +201,7 @@ async def run_init(_app=None):
 
     # Oferty biletów
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS flight_offers (
+    CREATE TABLE flight_offers (
         id SERIAL PRIMARY KEY,
         origin_city_code VARCHAR(3) NOT NULL,
         destination_city_code VARCHAR(3) NOT NULL,
@@ -206,7 +227,7 @@ async def run_init(_app=None):
 
     # Podróże użytkowników (nowa tabela)
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS user_trips (
+    CREATE TABLE user_trips (
         id SERIAL PRIMARY KEY,
         user_id TEXT NOT NULL,
         name TEXT,
@@ -219,33 +240,31 @@ async def run_init(_app=None):
 
     # Trips (plany podróży)
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS trips (
+    CREATE TABLE trips (
         id SERIAL PRIMARY KEY,
         name VARCHAR(200),
         start_airport_code VARCHAR(4) NOT NULL,
         start_date DATE NOT NULL,
         created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
         updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
-        -- FK zostanie dodany później
     );
     """)
 
     # Loty w podróży
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS trip_flights (
+    CREATE TABLE trip_flights (
         id SERIAL PRIMARY KEY,
         trip_id INTEGER NOT NULL,
         flight_id INTEGER NOT NULL,
         flight_order INTEGER NOT NULL,
         added_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
         UNIQUE(trip_id, flight_order)
-        -- FK zostaną dodane później
     );
     """)
 
     # Ceny dla lotów w podróży
     await db.execute("""
-    CREATE TABLE IF NOT EXISTS trip_flight_prices (
+    CREATE TABLE trip_flight_prices (
         id SERIAL PRIMARY KEY,
         trip_flight_id INTEGER NOT NULL,
         offer_id INTEGER,
@@ -253,7 +272,6 @@ async def run_init(_app=None):
         currency VARCHAR(3),
         link TEXT,
         found_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
-        -- FK zostaną dodane później
     );
     """)
 
@@ -448,87 +466,87 @@ async def run_init(_app=None):
         ON DELETE SET NULL;
     """)
 
+    # Indeksy dla user_trips
+    await db.execute("CREATE INDEX idx_user_trips_user_id ON user_trips(user_id);")
+    await db.execute("CREATE INDEX idx_user_trips_updated ON user_trips(updated_at DESC);")
+
     # ============================================
     # 5. Indeksy
     # ============================================
 
     # Kraje
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_countries_name ON countries(name);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_countries_currency ON countries(currency);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_countries_name_lower ON countries(LOWER(name));")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_countries_translations ON countries USING gin(name_translations);")
+    await db.execute("CREATE INDEX idx_countries_name ON countries(name);")
+    await db.execute("CREATE INDEX idx_countries_currency ON countries(currency);")
+    await db.execute("CREATE INDEX idx_countries_name_lower ON countries(LOWER(name));")
+    await db.execute("CREATE INDEX idx_countries_translations ON countries USING gin(name_translations);")
 
     # Miasta
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_cities_name ON cities(name);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_cities_country ON cities(country_code);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_cities_has_airport ON cities(has_flightable_airport);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_cities_name_lower ON cities(LOWER(name));")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_cities_translations ON cities USING gin(name_translations);")
+    await db.execute("CREATE INDEX idx_cities_name ON cities(name);")
+    await db.execute("CREATE INDEX idx_cities_country ON cities(country_code);")
+    await db.execute("CREATE INDEX idx_cities_has_airport ON cities(has_flightable_airport);")
+    await db.execute("CREATE INDEX idx_cities_name_lower ON cities(LOWER(name));")
+    await db.execute("CREATE INDEX idx_cities_translations ON cities USING gin(name_translations);")
 
     # Linie lotnicze
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airlines_name ON airlines(name);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airlines_lowcost ON airlines(is_lowcost);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airlines_translations ON airlines USING gin(name_translations);")
+    await db.execute("CREATE INDEX idx_airlines_name ON airlines(name);")
+    await db.execute("CREATE INDEX idx_airlines_lowcost ON airlines(is_lowcost);")
+    await db.execute("CREATE INDEX idx_airlines_translations ON airlines USING gin(name_translations);")
 
     # Lotniska
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_name ON airports(name);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_city ON airports(city_code);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_country ON airports(country_code);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_type ON airports(iata_type);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_flightable ON airports(flightable);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_name_lower ON airports(LOWER(name));")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_airports_translations ON airports USING gin(name_translations);")
+    await db.execute("CREATE INDEX idx_airports_name ON airports(name);")
+    await db.execute("CREATE INDEX idx_airports_city ON airports(city_code);")
+    await db.execute("CREATE INDEX idx_airports_country ON airports(country_code);")
+    await db.execute("CREATE INDEX idx_airports_type ON airports(iata_type);")
+    await db.execute("CREATE INDEX idx_airports_flightable ON airports(flightable);")
+    await db.execute("CREATE INDEX idx_airports_name_lower ON airports(LOWER(name));")
+    await db.execute("CREATE INDEX idx_airports_translations ON airports USING gin(name_translations);")
 
     # Samoloty
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_planes_name ON planes(name);")
+    await db.execute("CREATE INDEX idx_planes_name ON planes(name);")
 
     # Trasy
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_airline ON routes(airline_iata);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_departure ON routes(departure_airport_iata);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_arrival ON routes(arrival_airport_iata);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_codeshare ON routes(codeshare);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_transfers ON routes(transfers);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_routes_planes_gin ON routes USING gin(planes);")
+    await db.execute("CREATE INDEX idx_routes_airline ON routes(airline_iata);")
+    await db.execute("CREATE INDEX idx_routes_departure ON routes(departure_airport_iata);")
+    await db.execute("CREATE INDEX idx_routes_arrival ON routes(arrival_airport_iata);")
+    await db.execute("CREATE INDEX idx_routes_codeshare ON routes(codeshare);")
+    await db.execute("CREATE INDEX idx_routes_transfers ON routes(transfers);")
+    await db.execute("CREATE INDEX idx_routes_planes_gin ON routes USING gin(planes);")
 
     # Cache rozkładów
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_schedules_airport_datetime ON airport_schedules_cache(airport_code, direction, fetch_from_local, fetch_to_local);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_schedules_fetched ON airport_schedules_cache(last_fetched_at);")
+    await db.execute("CREATE INDEX idx_schedules_airport_datetime ON airport_schedules_cache(airport_code, direction, fetch_from_local, fetch_to_local);")
+    await db.execute("CREATE INDEX idx_schedules_fetched ON airport_schedules_cache(last_fetched_at);")
 
     # Loty
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_origin_date ON flights(origin_airport_code, search_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_destination_date ON flights(destination_airport_code, search_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_origin_departure_local ON flights(origin_airport_code, scheduled_departure_local);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_departure_utc ON flights(scheduled_departure_utc);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_flight_number ON flights(flight_number);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_airline ON flights(airline_code);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_flights_origin_dest ON flights(origin_airport_code, destination_airport_code);")
+    await db.execute("CREATE INDEX idx_flights_origin_date ON flights(origin_airport_code, search_date);")
+    await db.execute("CREATE INDEX idx_flights_destination_date ON flights(destination_airport_code, search_date);")
+    await db.execute("CREATE INDEX idx_flights_origin_departure_local ON flights(origin_airport_code, scheduled_departure_local);")
+    await db.execute("CREATE INDEX idx_flights_departure_utc ON flights(scheduled_departure_utc);")
+    await db.execute("CREATE INDEX idx_flights_flight_number ON flights(flight_number);")
+    await db.execute("CREATE INDEX idx_flights_airline ON flights(airline_code);")
+    await db.execute("CREATE INDEX idx_flights_origin_dest ON flights(origin_airport_code, destination_airport_code);")
 
     # Cache cen
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_prices_origin_dest_date ON flight_prices_cache(origin_city_code, destination_city_code, departure_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_prices_fetched ON flight_prices_cache(last_fetched_at);")
+    await db.execute("CREATE INDEX idx_prices_origin_dest_date ON flight_prices_cache(origin_city_code, destination_city_code, departure_date);")
+    await db.execute("CREATE INDEX idx_prices_fetched ON flight_prices_cache(last_fetched_at);")
 
     # Oferty biletów
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_origin_airport_date ON flight_offers(origin_airport_code, search_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_destination_airport_date ON flight_offers(destination_airport_code, search_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_departure_at ON flight_offers(departure_at);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_city_origin_date ON flight_offers(origin_city_code, destination_city_code, search_date);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_price ON flight_offers(price);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_offers_transfers ON flight_offers(transfers);")
-
-    # User trips
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_user_trips_user_id ON user_trips(user_id);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_user_trips_updated ON user_trips(updated_at DESC);")
+    await db.execute("CREATE INDEX idx_offers_origin_airport_date ON flight_offers(origin_airport_code, search_date);")
+    await db.execute("CREATE INDEX idx_offers_destination_airport_date ON flight_offers(destination_airport_code, search_date);")
+    await db.execute("CREATE INDEX idx_offers_departure_at ON flight_offers(departure_at);")
+    await db.execute("CREATE INDEX idx_offers_city_origin_date ON flight_offers(origin_city_code, destination_city_code, search_date);")
+    await db.execute("CREATE INDEX idx_offers_price ON flight_offers(price);")
+    await db.execute("CREATE INDEX idx_offers_transfers ON flight_offers(transfers);")
 
     # Trips
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_trips_start_airport ON trips(start_airport_code);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_trips_start_date ON trips(start_date);")
+    await db.execute("CREATE INDEX idx_trips_start_airport ON trips(start_airport_code);")
+    await db.execute("CREATE INDEX idx_trips_start_date ON trips(start_date);")
 
     # Trip flights
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_trip_flights_trip ON trip_flights(trip_id);")
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_trip_flights_order ON trip_flights(trip_id, flight_order);")
+    await db.execute("CREATE INDEX idx_trip_flights_trip ON trip_flights(trip_id);")
+    await db.execute("CREATE INDEX idx_trip_flights_order ON trip_flights(trip_id, flight_order);")
 
     # Trip flight prices
-    await db.execute("CREATE INDEX IF NOT EXISTS idx_trip_prices_trip_flight ON trip_flight_prices(trip_flight_id);")
+    await db.execute("CREATE INDEX idx_trip_prices_trip_flight ON trip_flight_prices(trip_flight_id);")
 
     # ============================================
     # 6. Widoki
